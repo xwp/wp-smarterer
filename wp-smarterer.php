@@ -33,7 +33,7 @@ class WP_Smarterer {
 
 	function __construct() {
 		// Initialize admin functions
-		if ( is_admin() || DOING_AJAX ) require_once dirname( __FILE__ ) . '/inc/class.wp-smarterer-admin.php';
+		if ( is_admin() || ( defined('DOING_AJAX') && DOING_AJAX ) ) require_once dirname( __FILE__ ) . '/inc/class.wp-smarterer-admin.php';
 	}
 
 }

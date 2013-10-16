@@ -13,6 +13,8 @@ Connect user accounts to Smarterer profiles, provide template tags for showing u
 
 **Development of this plugin is done [on GitHub](https://github.com/x-team/wp-smarterer). Pull requests welcome. Please see [issues](https://github.com/x-team/wp-smarterer/issues) reported there before going to the plugin forum.**
 
+Use `WP_Smarterer::get_username( [ $id ] )`
+
 == Changelog ==
 
 = 0.1 =

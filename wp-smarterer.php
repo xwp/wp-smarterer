@@ -42,10 +42,13 @@ class WP_Smarterer {
 	 * @return mixed       Smarterer username, or FALSE
 	 */
 	static function get_username( $user = null ) {
-		if ( is_null( $user ) )
+		if ( is_null( $user ) && is_user_logged_in() )
 			$user = wp_get_current_user();
-		else
+		elseif ( ! empty( $user ) )
 			$user = new WP_User( $user );
+
+		if ( ! isset( $user ) || empty( $user->ID ) )
+			return false;
 
 		$meta = get_user_meta( $user->ID, 'smarterer_badges', true );
 		if ( $meta && is_object( $meta ) ) {

@@ -1,12 +1,12 @@
 <?php
 
-class WP_Smarterer_Admin {
+class Smarterer_Connect_Admin {
 
 	/**
 	 * Name of settings key
 	 * @var string
 	 */
-	public $setting_name = 'wp_smarterer_options';
+	public $setting_name = 'smarterer_connect_options';
 
 
 	function __construct() {
@@ -21,7 +21,7 @@ class WP_Smarterer_Admin {
 		add_action( 'edit_user_profile_update', array( $this, 'user_profile_fields_save' ) );
 
 		// Oauth Callback
-		add_action( 'wp_ajax_wp-smarterer-auth', array( $this, 'oauth_handler' ) );
+		add_action( 'wp_ajax_smarterer-connect-auth', array( $this, 'oauth_handler' ) );
 	}
 
 	/**
@@ -32,27 +32,27 @@ class WP_Smarterer_Admin {
 		return array(
 				'appkeys' => array(
 					'type'  => 'section',
-					'title' => __( 'App Keys', 'wp-smarterer' ),
+					'title' => __( 'App Keys', 'smarterer-connect' ),
 					),
 				'client_id' => array(
 					'type' => 'field',
-					'title' => __( 'Client ID', 'wp-smarterer' ),
+					'title' => __( 'Client ID', 'smarterer-connect' ),
 					'description' => sprintf(
-						__( 'Client ID is obtained by creating a new app on %s', 'wp-smarterer' ),
+						__( 'Client ID is obtained by creating a new app on %s', 'smarterer-connect' ),
 						'<a href="http://smarterer.com/developers/api/reg">smarterer.com</a>'
 						),
 					),
 				'client_secret' => array(
 					'type' => 'field',
-					'title' => __( 'Client Secret', 'wp-smarterer' ),
-					'description' => __( 'Client Secret is obtained by creating a new app on smarterer.com', 'wp-smarterer' ),
+					'title' => __( 'Client Secret', 'smarterer-connect' ),
+					'description' => __( 'Client Secret is obtained by creating a new app on smarterer.com', 'smarterer-connect' ),
 					),
 			);
 	}
 
 	/**
 	 * Setup and register setting/sections/fields of plugin
-	 * @see  WP_Smarterer_Admin::get_option_fields
+	 * @see  Smarterer_Connect_Admin::get_option_fields
 	 * @action admin_init
 	 * @return void
 	 */
@@ -108,8 +108,8 @@ class WP_Smarterer_Admin {
 	 */
 	function add_options_page() {
 		add_options_page(
-			__( 'Smarterer', 'wp-smarterer' ),
-			__( 'Smarterer', 'wp-smarterer' ),
+			__( 'Smarterer', 'smarterer-connect' ),
+			__( 'Smarterer', 'smarterer-connect' ),
 			'edit_theme_options',
 			$this->setting_name,
 			array( $this, 'render_page' )
@@ -124,7 +124,7 @@ class WP_Smarterer_Admin {
 		?>
 		<div class="wrap">
 			<?php screen_icon(); ?>
-			<h2><?php _e( 'WP Smarterer Options', 'wp_smarterer_options' ) ?></h2>
+			<h2><?php _e( 'Smarterer Connect Options', 'smarterer_connect_options' ) ?></h2>
 
 			<form method="post" action="options.php">
 				<?php
@@ -185,7 +185,7 @@ class WP_Smarterer_Admin {
 	function user_profile_fields( $user ) {
 		$options = $this->get_options();
 		$client_id = $options['client_id'];
-		$url = add_query_arg( 'client_id', $client_id, add_query_arg( 'callback_url', admin_url( 'admin-ajax.php?action=wp-smarterer' ), 'https://smarterer.com/oauth/authorize?' ) );
+		$url = add_query_arg( 'client_id', $client_id, add_query_arg( 'callback_url', admin_url( 'admin-ajax.php?action=smarterer-connect' ), 'https://smarterer.com/oauth/authorize?' ) );
 		// Add thickbox args
 		$url = $url . '&TB_iframe=1&width=100%&height=100%';
 		$connected = get_user_meta( $user->ID, 'smarterer_token', true );
@@ -234,7 +234,7 @@ class WP_Smarterer_Admin {
 
 	/**
 	 * Handle oauth callback from Smarterer.com
-	 * @action wp_ajax_wp-smarterer-auth
+	 * @action wp_ajax_smarterer-connect-auth
 	 * @return void
 	 */
 	function oauth_handler() {
@@ -277,4 +277,4 @@ class WP_Smarterer_Admin {
 
 }
 
-$admin = new WP_Smarterer_Admin;
+$admin = new Smarterer_Connect_Admin;

@@ -1,14 +1,14 @@
 <?php
 /**
- * Plugin Name: WP Smarterer
+ * Plugin Name: Smarterer Connect
  * Plugin URI: http://x-team.com
  * Description:
  * Version: 0.1.0
  * Author: X-Team, Shady Sharaf
  * Author URI: http://x-team.com/wordpress/
  * License: GPLv2+
- * Text Domain: wp-smarterer
- * Domain Path: /wp-smarterer
+ * Text Domain: smarterer-connect
+ * Domain Path: /smarterer-connect
  */
 
 /**
@@ -29,11 +29,11 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-class WP_Smarterer {
+class Smarterer_Connect {
 
 	function __construct() {
 		// Initialize admin functions
-		if ( is_admin() || ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) require_once dirname( __FILE__ ) . '/inc/class.wp-smarterer-admin.php';
+		if ( is_admin() || ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) require_once dirname( __FILE__ ) . '/inc/class.smarterer-connect-admin.php';
 	}
 
 	/**
@@ -59,4 +59,4 @@ class WP_Smarterer {
 
 }
 
-$GLOBALS['wp_smarterer'] = new WP_Smarterer;
+$GLOBALS['smarterer_connect'] = new Smarterer_Connect;

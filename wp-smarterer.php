@@ -36,6 +36,27 @@ class WP_Smarterer {
 		if ( is_admin() || ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) require_once dirname( __FILE__ ) . '/inc/class.wp-smarterer-admin.php';
 	}
 
+	/**
+	 * Get smarterer username for specified/current user
+	 * @param  mixed $user If null, gets the current logged-in user
+	 * @return mixed       Smarterer username, or FALSE
+	 */
+	static function get_username( $user = null ) {
+		if ( is_null( $user ) )
+			$user = wp_get_current_user();
+		else
+			$user = new WP_User( $user );
+
+		$meta = get_user_meta( $user->ID, 'smarterer_badges', true );
+		if ( $meta && is_object( $meta ) ) {
+			if ( isset( $meta->username ) ) {
+				return $meta->username;
+			}
+		}
+
+		return false;
+	}
+
 }
 
 $GLOBALS['wp_smarterer'] = new WP_Smarterer;

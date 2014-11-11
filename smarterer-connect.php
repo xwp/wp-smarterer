@@ -1,18 +1,18 @@
 <?php
 /**
  * Plugin Name: Smarterer Connect
- * Plugin URI: http://x-team.com
+ * Plugin URI: https://xwp.co
  * Description:
  * Version: 0.1.0
- * Author: X-Team, Shady Sharaf
- * Author URI: http://x-team.com/wordpress/
+ * Author: XWP, Shady Sharaf
+ * Author URI: https://xwp.co/
  * License: GPLv2+
  * Text Domain: smarterer-connect
  * Domain Path: /smarterer-connect
  */
 
 /**
- * Copyright (c) 2013 X-Team (http://x-team.com/)
+ * Copyright (c) 2013 XWP (https://xwp.co/)
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License, version 2 or, at

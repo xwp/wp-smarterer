@@ -1,5 +1,5 @@
 === Smarterer Connect ===
-Contributors:      X-Team, shadyvb
+Contributors:      XWP, shadyvb
 Tags:              smarterer, score
 Requires at least: 3.6
 Tested up to:      3.7
@@ -11,7 +11,7 @@ Connect user accounts to Smarterer profiles, provide template tags for showing u
 
 == Description ==
 
-**Development of this plugin is done [on GitHub](https://github.com/x-team/wp-smarterer-connect). Pull requests welcome. Please see [issues](https://github.com/x-team/wp-smarterer-connect/issues) reported there before going to the plugin forum.**
+**Development of this plugin is done [on GitHub](https://github.com/xwp/wp-smarterer-connect). Pull requests welcome. Please see [issues](https://github.com/xwp/wp-smarterer-connect/issues) reported there before going to the plugin forum.**
 
 Use `Smarterer_Connect::get_username( [ $id ] )`
 

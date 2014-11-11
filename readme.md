@@ -3,20 +3,20 @@
 
 Connect user accounts to Smarterer profiles, provide template tags for showing user scores in different tests.
 
-**Contributors:** [x-team](http://profiles.wordpress.org/x-team), [shadyvb](http://profiles.wordpress.org/shadyvb)  
+**Contributors:** [xwp](http://profiles.wordpress.org/xwp), [shadyvb](http://profiles.wordpress.org/shadyvb)  
 **Tags:** [smarterer](http://wordpress.org/plugins/tags/smarterer), [score](http://wordpress.org/plugins/tags/score)  
 **Requires at least:** 3.6  
 **Tested up to:** 3.7  
 **Stable tag:** trunk (master)  
 **License:** [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)  
 
+[![Build Status](https://travis-ci.org/xwp/wp-smarterer.png?branch=master)](https://travis-ci.org/xwp/wp-smarterer) 
+
 ## Description ##
 
-**Development of this plugin is done [on GitHub](https://github.com/x-team/smarterer-connect). Pull requests welcome. Please see [issues](https://github.com/x-team/smarterer-connect/issues) reported there before going to the plugin forum.**
+**Development of this plugin is done [on GitHub](https://github.com/xwp/wp-smarterer-connect). Pull requests welcome. Please see [issues](https://github.com/xwp/wp-smarterer-connect/issues) reported there before going to the plugin forum.**
 
 Use `Smarterer_Connect::get_username( [ $id ] )`
-
-[![Build Status](https://travis-ci.org/shadyvb/smarterer-connect.png)](https://travis-ci.org/shadyvb/smarterer-connect)
 
 ## Changelog ##
 
